@@ -31,7 +31,7 @@ namespace EasyAuthFunction
                 log.LogInformation($"Token: {accessToken}");
                 // Call into the Azure AD Graph API using HTTP primitives and the
                 // Azure AD access token.
-                var url = "https://graph.microsoft.com/v1.0/me/memberOf";
+                var url = "https://graph.microsoft.com/v1.0/me/";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer" ,accessToken);
                 log.LogInformation($"client {client.DefaultRequestHeaders.Authorization}");
                 var response = await client.GetAsync(url);
